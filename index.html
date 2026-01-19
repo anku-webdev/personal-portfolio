@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- ✅ Primary SEO Meta -->
+    <title>Mayank Rawat | Portfolio</title>
+    <meta name="description"
+        content="Mayank Rawat is a Frontend Developer specializing in HTML, CSS, JavaScript. Explore projects and contact details." />
+    <meta name="keywords" content="Frontend developer, web developer, HTML, CSS, JavaScript, portfolio" />
+    <meta name="author" content="Mayank Rawat" />
+    <meta name="robots" content="index, follow" />
+
+    <!-- ✅ Canonical (Vercel URL rakhna better) -->
+    <link rel="canonical" href="https://YOUR-VERCEL-LINK.vercel.app/" />
+
+    <!-- ✅ Open Graph -->
+    <meta property="og:title" content="Mayank Rawat | Frontend Developer Portfolio" />
+    <meta property="og:description"
+        content="Explore Mayank Rawat's portfolio featuring web development projects built with HTML, CSS, and JavaScript." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://YOUR-VERCEL-LINK.vercel.app/" />
+    <meta property="og:image" content="images/preview.png" />
+
+    <!-- ✅ Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Mayank Rawat | Portfolio" />
+    <meta name="twitter:description"
+        content="Frontend Developer portfolio showcasing projects, skills, and contact information." />
+    <meta name="twitter:image" content="images/preview.png" />
+
+    <!-- ✅ Favicon -->
+    <link rel="icon" href="images/favicon.png" type="image/png" />
+
+    <!-- ✅ Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+    <!-- ✅ CSS -->
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+    <!-- ✅ Header -->
+    <header>
+        <nav class="container">
+            <div class="logo">Mayank</div>
+
+            <!-- ✅ Mobile Menu Button -->
+            <button class="menu-btn" id="menuBtn" aria-label="Open Menu">
+                <i class="fas fa-bars"></i>
+            </button>
+
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- ✅ Hero -->
+    <section id="home" class="hero">
+        <div class="container">
+            <h1>Hi, I'm Mayank</h1>
+            <p>Building Modern Web Applications | SEO | WordPress</p>
+            <a href="#contact" class="btn">Get In Touch</a>
+        </div>
+    </section>
+
+    <!-- ✅ Skills -->
+    <section id="skills">
+        <div class="container">
+            <h2>Technical Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <i class="fab fa-html5"></i>
+                    <h3>HTML5</h3>
+                </div>
+
+                <div class="skill-card">
+                    <i class="fab fa-css3-alt"></i>
+                    <h3>CSS3</h3>
+                </div>
+
+                <div class="skill-card">
+                    <i class="fab fa-js"></i>
+                    <h3>JavaScript</h3>
+                </div>
+
+                <div class="skill-card">
+                    <i class="fab fa-git-alt"></i>
+                    <h3>Git</h3>
+                </div>
+
+                <div class="skill-card">
+                    <i class="fa-brands fa-wordpress"></i>
+                    <h3>WordPress</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ✅ Projects -->
+    <section id="projects">
+        <div class="container">
+            <h2>Featured Projects</h2>
+
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-img">
+                        <i class="fas fa-film"></i>
+                    </div>
+
+                    <div class="project-content">
+                        <h3>Netflix Clone</h3>
+                        <p>A fully functional Netflix clone with user authentication, movie browsing, and streaming UI.
+                        </p>
+
+                        <div class="tech-stack">
+                            <span class="tech-tag">React.js</span>
+                            <span class="tech-tag">HTML5</span>
+                            <span class="tech-tag">CSS3</span>
+                            <span class="tech-tag">JavaScript</span>
+                        </div>
+
+                        <div class="project-links">
+                            <a class="btn-small" href="https://netflix-clone-io.vercel.app" target="_blank">View
+                                Website</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-img">
+                        <i class="fas fa-code"></i>
+                    </div>
+
+                    <div class="project-content">
+                        <h3>Brand Home Page</h3>
+                        <p>Interactive brand homepage with modern UI/UX.</p>
+
+                        <div class="tech-stack">
+                            <span class="tech-tag">React.js</span>
+                        </div>
+
+                        <div class="project-links">
+                            <a class="btn-small" href="https://company-page-zeta-two.vercel.app/" target="_blank">View
+                                Website</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ✅ Contact -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <h2>Get In Touch</h2>
+
+            <div class="contact-grid">
+                <div class="contact-card">
+                    <i class="fas fa-phone"></i>
+                    <h3>Phone</h3>
+                    <a href="tel:9821464023">9821464023</a>
+                </div>
+
+                <div class="contact-card">
+                    <i class="fas fa-envelope"></i>
+                    <h3>Email</h3>
+                    <a href="mailto:mayankrawat9966@gmail.com">Contact via Email</a>
+                </div>
+
+                <div class="contact-card">
+                    <i class="fab fa-linkedin"></i>
+                    <h3>LinkedIn</h3>
+                    <a href="https://linkedin.com/in/mayank-rawat2308" target="_blank">Connect on LinkedIn</a>
+                </div>
+
+                <div class="contact-card">
+                    <i class="fab fa-github"></i>
+                    <h3>GitHub</h3>
+                    <a href="https://github.com/anku-webdev" target="_blank">View GitHub Profile</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ✅ Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Mayank. All rights reserved.</p>
+
+            <div class="social-links">
+                <a href="https://github.com/anku-webdev" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="https://linkedin.com/in/mayank-rawat2308" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="mailto:mayankrawat9966@gmail.com"><i class="fas fa-envelope"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ✅ JS -->
+    <script>
+        // ✅ Mobile Menu Toggle
+        const menuBtn = document.getElementById("menuBtn");
+        const navLinks = document.getElementById("navLinks");
+
+        menuBtn.addEventListener("click", () => {
+            navLinks.classList.toggle("active");
+        });
+
+        // ✅ Smooth Scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    navLinks.classList.remove("active");
+                }
+            });
+        });
+        document.querySelectorAll("#navLinks a").forEach(link => {
+            link.addEventListener("click", () => {
+                navLinks.classList.remove("active");
+            });
+        });
+
+    </script>
+
+</body>
+
+</html>
