@@ -9,11 +9,13 @@
     <title>Mayank Rawat | Portfolio</title>
     <meta name="description"
         content="Mayank Rawat is a Frontend Developer specializing in HTML, CSS, JavaScript. Explore projects and contact details." />
-    <meta name="keywords" content="Frontend developer, web developer, HTML, CSS, JavaScript, portfolio , mayank portfolio" />
+
+    <meta name="keywords"
+        content="Frontend developer, web developer, HTML, CSS, JavaScript, Mayank Rawat portfolio, WordPress, SEO" />
     <meta name="author" content="Mayank Rawat" />
     <meta name="robots" content="index, follow" />
-    
-    <!-- ✅ Canonical (Vercel URL rakhna better) -->
+
+    <!-- ✅ Canonical -->
     <link rel="canonical" href="https://personal-portfolio-nu-drab.vercel.app/" />
 
     <!-- ✅ Open Graph -->
@@ -21,7 +23,7 @@
     <meta property="og:description"
         content="Explore Mayank Rawat's portfolio featuring web development projects built with HTML, CSS, and JavaScript." />
     <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://YOUR-VERCEL-LINK.vercel.app/" />
+    <meta property="og:url" content="https://personal-portfolio-nu-drab.vercel.app/" />
     <meta property="og:image" content="images/preview.png" />
 
     <!-- ✅ Twitter Card -->
@@ -31,16 +33,19 @@
         content="Frontend Developer portfolio showcasing projects, skills, and contact information." />
     <meta name="twitter:image" content="images/preview.png" />
 
+    <!-- ✅ Google Verification -->
+    <meta name="google-site-verification" content="-GBRpbkWx6MgK6V4PoglekWbELZDqrcvS47URQ2bzI8" />
+
     <!-- ✅ Favicon -->
     <link rel="icon" href="images/favicon.png" type="image/png" />
 
     <!-- ✅ Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-<meta name="google-site-verification" content="-GBRpbkWx6MgK6V4PoglekWbELZDqrcvS47URQ2bzI8" />
+
     <!-- ✅ CSS -->
     <link rel="stylesheet" href="style.css" />
 </head>
-<!--redeploy vercsel  -->
+
 <body>
 
     <!-- ✅ Header -->
@@ -58,6 +63,7 @@
                 <li><a href="#skills">Skills</a></li>
                 <li><a href="#projects">Projects</a></li>
                 <li><a href="#contact">Contact</a></li>
+                <li><a href="./blog.html">Blog</a></li>
             </ul>
         </nav>
     </header>
@@ -65,10 +71,11 @@
     <!-- ✅ Hero -->
     <section id="home" class="hero">
         <div class="container">
-            <h1>Hi, I'm Mayank</h1>
-            <p>Building Modern Web Applications | SEO | WordPress</p>
+            <h1><span id="typed-h1"></span></h1>
+            <p><span id="typed-p"></span></p>
             <a href="#contact" class="btn">Get In Touch</a>
         </div>
+
     </section>
 
     <!-- ✅ Skills -->
@@ -76,6 +83,7 @@
         <div class="container">
             <h2>Technical Skills</h2>
             <div class="skills-grid">
+
                 <div class="skill-card">
                     <i class="fab fa-html5"></i>
                     <h3>HTML5</h3>
@@ -100,6 +108,19 @@
                     <i class="fa-brands fa-wordpress"></i>
                     <h3>WordPress</h3>
                 </div>
+                <div class="skill-card">
+                    <i class="fab fa-react"></i>
+                    <h3>ReactJs</h3>
+                </div>
+
+                <div class="skill-card">
+                    <i class="fa-brands fa-laravel"></i>
+                    <h3>Laravel</h3>
+                </div>
+                <div class="skill-card">
+                    <i class="fa-brands fa-php"></i>
+                    <h3>php</h3>
+                </div>
             </div>
         </div>
     </section>
@@ -110,6 +131,8 @@
             <h2>Featured Projects</h2>
 
             <div class="projects-grid">
+
+                <!-- ✅ Project 1 -->
                 <div class="project-card">
                     <div class="project-img">
                         <i class="fas fa-film"></i>
@@ -128,12 +151,14 @@
                         </div>
 
                         <div class="project-links">
-                            <a class="btn-small" href="https://netflix-clone-io.vercel.app" target="_blank">View
-                                Website</a>
+                            <a class="btn-small" href="https://netflix-clone-io.vercel.app" target="_blank">
+                                View Website
+                            </a>
                         </div>
                     </div>
                 </div>
 
+                <!-- ✅ Project 2 -->
                 <div class="project-card">
                     <div class="project-img">
                         <i class="fas fa-code"></i>
@@ -148,8 +173,9 @@
                         </div>
 
                         <div class="project-links">
-                            <a class="btn-small" href="https://company-page-zeta-two.vercel.app/" target="_blank">View
-                                Website</a>
+                            <a class="btn-small" href="https://company-page-zeta-two.vercel.app/" target="_blank">
+                                View Website
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -164,6 +190,7 @@
             <h2>Get In Touch</h2>
 
             <div class="contact-grid">
+
                 <div class="contact-card">
                     <i class="fas fa-phone"></i>
                     <h3>Phone</h3>
@@ -187,6 +214,7 @@
                     <h3>GitHub</h3>
                     <a href="https://github.com/anku-webdev" target="_blank">View GitHub Profile</a>
                 </div>
+
             </div>
         </div>
     </section>
@@ -205,6 +233,8 @@
     </footer>
 
     <!-- ✅ JS -->
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+
     <script>
         // ✅ Mobile Menu Toggle
         const menuBtn = document.getElementById("menuBtn");
@@ -219,17 +249,39 @@
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
                 const target = document.querySelector(this.getAttribute('href'));
+
                 if (target) {
                     target.scrollIntoView({ behavior: 'smooth', block: 'start' });
                     navLinks.classList.remove("active");
                 }
             });
         });
+
+        // ✅ Close menu on click
         document.querySelectorAll("#navLinks a").forEach(link => {
             link.addEventListener("click", () => {
                 navLinks.classList.remove("active");
             });
         });
+
+        var typed1 = new Typed("#typed-h1", {
+            strings: ["Hi, I'm Mayank", "Hi, I'm a Developer", "Hi, I Build Websites"],
+            typeSpeed: 80,
+            backSpeed: 50,
+            loop: true
+        });
+
+        var typed2 = new Typed("#typed-p", {
+            strings: [
+                "Full Stack | Building Modern Web Applications",
+                "SEO | WordPress | Web Development"
+            ],
+            typeSpeed: 60,
+            backSpeed: 40,
+            loop: true,
+            startDelay: 500
+        });
+    </script>
 
     </script>
 
