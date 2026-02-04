@@ -12,8 +12,8 @@
 }
 
 :root {
-    --primary: #23257e;
-    --secondary: #8b5cf6;
+    --primary: #2338f3;
+    --secondary: #5a2dff;
     --dark: #0f172a;
     --light: #f8fafc;
     --gray: #64748b;
@@ -75,18 +75,26 @@ nav {
     color: white;
     padding: 150px 0 100px;
     text-align: center;
-    background-image: url(bgimg.jpg);
+    background-image: linear-gradient(rgba(15, 23, 42, 0.5),
+            rgba(15, 23, 42, 0.6)), url(bgimg.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 .hero h1 {
     font-size: 3rem;
     margin-bottom: 1rem;
+    background: linear-gradient(90deg, rgb(35, 56, 243), #ffffff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
     animation: fadeInUp 1s;
 }
 
 .hero p {
     font-size: 1.3rem;
     margin-bottom: 2rem;
+    color: #e5e7eb;
     animation: fadeInUp 1s 0.2s backwards;
 }
 
@@ -103,6 +111,8 @@ nav {
 }
 
 .btn:hover {
+    background: var(--primary);
+    color: white;
     transform: translateY(-3px);
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
@@ -112,18 +122,15 @@ section {
     background-color: var(--dark);
 }
 
-h2 {
-    text-align: center;
-    font-size: 2.5rem;
-    margin-bottom: 3rem;
-    color: var(--light);
+#skills h2 {
+    color: white;
 }
 
 .skills-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
     gap: 2rem;
-    margin-top: 3rem;
+    margin-top: 1.2rem;
 }
 
 .skill-card {
@@ -145,10 +152,15 @@ h2 {
     margin-bottom: 1rem;
 }
 
+#projects h2 {
+    color: white;
+}
+
 .projects-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;
+    margin-top: 1.2rem;
 }
 
 .project-card {
@@ -198,8 +210,10 @@ h2 {
     color: var(--primary);
 }
 
-.contact-section {
-    background: var(--primary);
+/* .contact-section {} */
+
+.contact-section .container h2 {
+    color: white;
 }
 
 .contact-grid {
@@ -233,7 +247,6 @@ h2 {
     color: var(--primary);
 }
 
-
 .menu-btn {
     display: none;
     background: none;
@@ -244,7 +257,8 @@ h2 {
 }
 
 footer {
-    background: var(--dark);
+    /* background: var(--secondary); */
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
     color: white;
     text-align: center;
     padding: 2rem 0;
@@ -279,36 +293,9 @@ footer {
     }
 }
 
-@media (max-width: 768px) {
-    .nav-links {
-        gap: 1rem;
-    }
-
-    .hero h1 {
-        font-size: 2rem;
-    }
-
-    .hero p {
-        font-size: 1rem;
-    }
-
-    h2 {
-        font-size: 2rem;
-    }
-}
-
-
-/*  respoinsive
- */
 img {
     max-width: 100%;
     height: auto;
-}
-
-.hero {
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
 }
 
 @media (max-width: 992px) {
@@ -320,21 +307,14 @@ img {
         padding: 140px 0 80px;
     }
 
-    .skills-grid {
-        gap: 1.5rem;
-    }
-
-    .projects-grid {
-        gap: 1.5rem;
-    }
-
+    .skills-grid,
+    .projects-grid,
     .contact-grid {
         gap: 1.5rem;
     }
 }
 
 @media (max-width: 768px) {
-
     header {
         padding: 0.8rem 0;
     }
@@ -384,11 +364,6 @@ img {
         padding: 60px 0;
     }
 
-    h2 {
-        font-size: 2rem;
-        margin-bottom: 2rem;
-    }
-
     .skills-grid {
         grid-template-columns: repeat(2, 1fr);
         margin-top: 2rem;
@@ -423,10 +398,27 @@ img {
         gap: 1.2rem;
         flex-wrap: wrap;
     }
+
+    .menu-btn {
+        display: block;
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        gap: 12px;
+        margin-top: 12px;
+        background: rgba(255, 255, 255, 0.12);
+        padding: 12px;
+        border-radius: 12px;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
 }
 
 @media (max-width: 480px) {
-
     .hero {
         padding: 110px 0 60px;
     }
@@ -454,27 +446,5 @@ img {
     .tech-tag {
         font-size: 0.75rem;
         padding: 4px 8px;
-    }
-}
-
-@media (max-width: 768px) {
-
-    .menu-btn {
-        display: block;
-        /* ✅ only mobile */
-    }
-
-    .nav-links {
-        display: none;
-        flex-direction: column;
-        gap: 12px;
-        margin-top: 12px;
-        background: rgba(255, 255, 255, 0.12);
-        padding: 12px;
-        border-radius: 12px;
-    }
-
-    .nav-links.active {
-        display: flex;
     }
 }
