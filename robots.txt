@@ -1,5 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://mayank-personalportfolio.vercel.app/
-
+Sitemap: https://personal-portfolio-nu-drab.vercel.app/sitemap.xml

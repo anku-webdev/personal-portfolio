@@ -1,0 +1,594 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Mayank Rawat | Blog</title>
+    <meta name="description"
+        content="Mayank Rawat blogs about Frontend Development, SEO, Vercel indexing, Robots.txt and Sitemap.xml." />
+    <meta name="author" content="Mayank Rawat" />
+    <meta name="robots" content="index, follow" />
+
+    <!-- ✅ Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+    <style>
+        :root {
+            --bg: #0b0f14;
+            --card: #111826;
+            --text: #e9eef7;
+            --muted: #aab4c5;
+            --brand: #00ffd5;
+            --line: rgba(255, 255, 255, 0.08);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+        }
+
+        a {
+            color: var(--brand);
+            text-decoration: none;
+        }
+
+        .container {
+            width: min(1100px, 92%);
+            margin: auto;
+        }
+
+        /* ✅ Header */
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(11, 15, 20, 0.85);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--line);
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 14px 0;
+        }
+
+        .logo {
+            font-weight: 700;
+            font-size: 18px;
+            letter-spacing: 1px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 18px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--text);
+            font-size: 14px;
+            opacity: 0.9;
+            padding: 8px 10px;
+            border-radius: 10px;
+            transition: 0.2s ease;
+        }
+
+        .nav-links a:hover {
+            background: rgba(255, 255, 255, 0.06);
+            color: var(--brand);
+        }
+
+        /* ✅ Blog Heading */
+        .heading {
+            padding: 42px 0 18px;
+            border-bottom: 1px solid var(--line);
+        }
+
+        .heading h1 {
+            font-size: clamp(26px, 3vw, 36px);
+            margin-bottom: 6px;
+        }
+
+        .heading span {
+            color: var(--muted);
+            font-size: 14px;
+        }
+
+        /* ✅ Blog Cards */
+        .blog-container {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 18px;
+            padding: 26px 0 40px;
+        }
+
+        .blog-card {
+            background: var(--card);
+            border: 1px solid var(--line);
+            border-radius: 18px;
+            padding: 20px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+        }
+
+        .blog-title {
+            font-size: clamp(20px, 2.2vw, 26px);
+            margin-bottom: 8px;
+        }
+
+        .blog-meta {
+            color: var(--muted);
+            font-size: 13px;
+            margin-bottom: 12px;
+        }
+
+        .tagline {
+            color: var(--brand);
+            font-size: 13px;
+            margin-bottom: 14px;
+        }
+
+        .blog-cover {
+            width: 100%;
+            border-radius: 14px;
+            overflow: hidden;
+            border: 1px solid var(--line);
+            margin-bottom: 16px;
+        }
+
+        .blog-cover img {
+            width: 100%;
+            height: 260px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .blog-section {
+            margin-top: 16px;
+            padding-top: 14px;
+            border-top: 1px solid var(--line);
+        }
+
+        .blog-section h2 {
+            font-size: 18px;
+            margin-bottom: 8px;
+            color: var(--brand);
+        }
+
+        .blog-section p {
+            color: var(--text);
+            opacity: 0.95;
+            margin-bottom: 8px;
+        }
+
+        ul {
+            margin-left: 18px;
+            margin-top: 8px;
+            color: var(--text);
+            opacity: 0.95;
+        }
+
+        li {
+            margin-bottom: 6px;
+        }
+
+        .feature-box,
+        .step-box,
+        .challenge-box {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--line);
+            padding: 12px;
+            border-radius: 14px;
+            margin-top: 10px;
+        }
+
+        .feature-box h3,
+        .step-box h3,
+        .challenge-box h3 {
+            font-size: 15px;
+            margin-bottom: 6px;
+            color: #ffffff;
+        }
+
+        pre {
+            background: #0a0f16;
+            border: 1px solid var(--line);
+            padding: 14px;
+            border-radius: 14px;
+            overflow-x: auto;
+            margin-top: 10px;
+            color: #d7e1f3;
+            font-size: 13px;
+        }
+
+        /* ✅ Footer */
+        footer {
+            border-top: 1px solid var(--line);
+            padding: 22px 0;
+            margin-top: 20px;
+        }
+
+        footer p {
+            color: var(--muted);
+            font-size: 13px;
+        }
+
+        .social-links {
+            margin-top: 10px;
+            display: flex;
+            gap: 14px;
+        }
+
+        .social-links a {
+            color: var(--text);
+            font-size: 18px;
+            opacity: 0.85;
+            transition: 0.2s ease;
+        }
+
+        .social-links a:hover {
+            color: var(--brand);
+            opacity: 1;
+        }
+
+        @media (max-width: 680px) {
+            .nav-links {
+                gap: 10px;
+                flex-wrap: wrap;
+                justify-content: flex-end;
+            }
+
+            .blog-cover img {
+                height: 200px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ✅ Header -->
+    <header>
+        <nav class="container">
+            <div class="logo">Mayank</div>
+
+            <ul class="nav-links">
+                <li><a href="./index.html">Home</a></li>
+                <li><a href="./blog.html">Blog</a></li>
+                <li><a href="./index.html#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- ✅ Blog Section -->
+    <section class="blog">
+        <div class="container heading">
+            <h1>Blog</h1>
+            <span><a href="./index.html">Home</a> / <span>Blog</span></span>
+        </div>
+
+        <div class="container blog-container">
+
+            <!-- ✅ BLOG 1 -->
+            <article class="blog-card">
+                <h1 class="blog-title">Project Breakdown: Responsive Portfolio Website (HTML, CSS, JS)</h1>
+
+                <p class="blog-meta">
+                    <strong>Category:</strong> Project Breakdown |
+                    <strong>Date:</strong> 2026-01-20 |
+                    <strong>Author:</strong> Mayank Rawat
+                </p>
+
+                <p class="tagline">
+                    <strong>Tags:</strong> Portfolio, HTML, CSS, JavaScript, Responsive Design, Vercel
+                </p>
+
+                <div class="blog-cover">
+                    <img src="bgimg.jpg" alt="Portfolio Project Blog Cover">
+                </div>
+
+                <div class="blog-section">
+                    <h2>Overview</h2>
+                    <p>
+                        I built my personal portfolio website to showcase my skills, projects, and contact details in a
+                        clean and
+                        professional way. The main focus of this portfolio is a responsive layout, smooth navigation,
+                        and a fast user
+                        experience across all devices.
+                    </p>
+                </div>
+
+                <div class="blog-section">
+                    <h2>Why I Built This</h2>
+                    <ul>
+                        <li>To present my web development skills professionally</li>
+                        <li>To create a fully responsive design for mobile and desktop users</li>
+                        <li>To keep the website fast, clean, and easy to navigate</li>
+                        <li>To make it easier for recruiters and clients to explore my work</li>
+                    </ul>
+                </div>
+
+                <div class="blog-section">
+                    <h2>Tech Stack Used</h2>
+                    <ul>
+                        <li>HTML5 for structure and content</li>
+                        <li>CSS3 (Flexbox + Media Queries) for responsive layout</li>
+                        <li>JavaScript for interactive features and smooth scrolling</li>
+                        <li>Libraries like Boxicons and Typed.js (optional)</li>
+                        <li>Hosting: Deployed on Vercel</li>
+                    </ul>
+                </div>
+
+                <div class="blog-section">
+                    <h2>Main Features</h2>
+
+                    <div class="feature-box">
+                        <h3>Responsive Navigation Bar</h3>
+                        <ul>
+                            <li>Full navigation menu on desktop screens</li>
+                            <li>Hamburger menu for mobile devices</li>
+                        </ul>
+                    </div>
+
+                    <div class="feature-box">
+                        <h3>Hero Section with Typed Text Animation</h3>
+                        <ul>
+                            <li>A typing animation that highlights roles like “Web Developer | Frontend Developer | SEO
+                                Learner”</li>
+                        </ul>
+                    </div>
+
+                    <div class="feature-box">
+                        <h3>Projects Section</h3>
+                        <ul>
+                            <li>Project cards with a short description</li>
+                            <li>Buttons for Live Demo and GitHub (optional)</li>
+                        </ul>
+                    </div>
+
+                    <div class="feature-box">
+                        <h3>Smooth Scrolling Experience</h3>
+                        <ul>
+                            <li>One-click navigation to any section with smooth scroll behavior</li>
+                        </ul>
+                    </div>
+
+                    <div class="feature-box">
+                        <h3>Contact Section</h3>
+                        <ul>
+                            <li>Quick access to email and social profiles</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="blog-section">
+                    <h2>Challenges & Fixes</h2>
+
+                    <div class="challenge-box">
+                        <h3>Mobile Menu Issues</h3>
+                        <p><strong>Fix:</strong> Fixed using media queries and improving the menu toggle logic.</p>
+                    </div>
+
+                    <div class="challenge-box">
+                        <h3>Page Speed Improvements</h3>
+                        <p><strong>Fix:</strong> Fixed by compressing images and using correct image sizes.</p>
+                    </div>
+
+                    <div class="challenge-box">
+                        <h3>Deployment Setup</h3>
+                        <p><strong>Fix:</strong> Successfully deployed after setting up the correct project structure.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="blog-section">
+                    <h2>Final Result</h2>
+                    <p>
+                        This portfolio website is fully responsive, fast, and easy to navigate. It gives a professional
+                        impression
+                        and helps recruiters or clients quickly understand my skills and work.
+                    </p>
+                </div>
+
+                <div class="blog-section">
+                    <h2>What I Will Improve Next</h2>
+                    <ul>
+                        <li>Add a complete Blog page with multiple posts</li>
+                        <li>Improve SEO using sitemap, canonical URL, and better meta tags</li>
+                        <li>Add Dark Mode for better UI experience</li>
+                    </ul>
+                </div>
+            </article>
+
+            <!-- ✅ BLOG 2 -->
+            <article class="blog-card">
+                <h1 class="blog-title">How to Index Your Vercel Website on Google (Step-by-Step)</h1>
+
+                <p class="blog-meta">
+                    <strong>Category:</strong> SEO |
+                    <strong>Date:</strong> 2026-01-20 |
+                    <strong>Author:</strong> Mayank Rawat
+                </p>
+
+                <p class="tagline">
+                    <strong>Tags:</strong> SEO, Google Search Console, Vercel, Indexing, Sitemap
+                </p>
+
+                <div class="blog-cover">
+                    <img src="bgimg.jpg" alt="Vercel Indexing Blog Cover">
+                </div>
+
+                <div class="blog-section">
+                    <h2>Intro</h2>
+                    <p>
+                        If your website is hosted on Vercel and it is not showing on Google, the easiest solution is
+                        Google Search
+                        Console. It helps Google discover and index your website properly.
+                    </p>
+                </div>
+
+                <div class="blog-section">
+                    <h2>Steps</h2>
+
+                    <div class="step-box">
+                        <h3>1) Open Google Search Console</h3>
+                        <ul>
+                            <li>Go to Google Search Console</li>
+                            <li>Add your website property</li>
+                        </ul>
+                    </div>
+
+                    <div class="step-box">
+                        <h3>2) Add Property (Choose one option)</h3>
+                        <ul>
+                            <li>Domain Property: Covers all subdomains and is recommended</li>
+                            <li>URL Prefix: Easy for beginners, example: https://yourwebsite.vercel.app/</li>
+                        </ul>
+                    </div>
+
+                    <div class="step-box">
+                        <h3>3) Verify Ownership</h3>
+                        <ul>
+                            <li>Use DNS verification (best for Vercel websites)</li>
+                            <li>Alternative options: Google Analytics or Tag Manager (optional)</li>
+                        </ul>
+                    </div>
+
+                    <div class="step-box">
+                        <h3>4) Submit Sitemap</h3>
+                        <ul>
+                            <li>Go to Search Console → Sitemaps</li>
+                            <li>Submit: https://yourwebsite.vercel.app/sitemap.xml</li>
+                        </ul>
+                    </div>
+
+                    <div class="step-box">
+                        <h3>5) Request Indexing</h3>
+                        <ul>
+                            <li>Go to URL Inspection</li>
+                            <li>Paste your page URL and click Request Indexing</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="blog-section">
+                    <h2>Bonus Tips</h2>
+                    <ul>
+                        <li>Add internal links between sections/pages</li>
+                        <li>Share your website on social media</li>
+                        <li>Build backlinks from relevant platforms</li>
+                        <li>Improve page speed and mobile usability</li>
+                    </ul>
+                </div>
+
+                <div class="blog-section">
+                    <h2>Conclusion</h2>
+                    <p>
+                        Indexing a Vercel website is simple if you set up Google Search Console, submit your sitemap,
+                        and request
+                        indexing through the URL Inspection tool.
+                    </p>
+                </div>
+            </article>
+
+            <!-- ✅ BLOG 3 -->
+            <article class="blog-card">
+                <h1 class="blog-title">Robots.txt and Sitemap.xml Explained (With Best Example)</h1>
+
+                <p class="blog-meta">
+                    <strong>Category:</strong> SEO |
+                    <strong>Date:</strong> 2026-01-20 |
+                    <strong>Author:</strong> Mayank Rawat
+                </p>
+
+                <p class="tagline">
+                    <strong>Tags:</strong> SEO, Robots.txt, Sitemap.xml, Crawling, Indexing
+                </p>
+
+                <div class="blog-cover">
+                    <img src="bgimg.jpg" alt="Robots and Sitemap Blog Cover">
+                </div>
+
+                <div class="blog-section">
+                    <h2>What is Sitemap.xml?</h2>
+                    <p>
+                        A sitemap.xml file tells search engines which pages exist on your website and helps them
+                        discover important
+                        pages faster.
+                    </p>
+
+                    <pre><?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://yourwebsite.vercel.app/</loc>
+    <lastmod>2026-01-20</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+</urlset></pre>
+                </div>
+
+                <div class="blog-section">
+                    <h2>What is Robots.txt?</h2>
+                    <p>
+                        A robots.txt file tells search engine bots which pages they are allowed to crawl and where your
+                        sitemap is
+                        located.
+                    </p>
+
+                    <pre>User-agent: *
+Allow: /
+
+Sitemap: https://yourwebsite.vercel.app/sitemap.xml</pre>
+                </div>
+
+                <div class="blog-section">
+                    <h2>Why Important?</h2>
+                    <ul>
+                        <li>Helps Google crawl your website properly</li>
+                        <li>Improves indexing speed for new pages</li>
+                        <li>Shows that your website follows SEO best practices</li>
+                        <li>Makes the site more professional for search engines</li>
+                    </ul>
+                </div>
+
+                <div class="blog-section">
+                    <h2>Conclusion</h2>
+                    <p>
+                        For a static HTML/CSS/JS website, adding robots.txt and sitemap.xml is one of the best basic SEO
+                        steps. After
+                        adding them, submit your sitemap in Google Search Console.
+                    </p>
+                </div>
+            </article>
+
+        </div>
+    </section>
+
+    <!-- ✅ Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Mayank. All rights reserved.</p>
+
+            <div class="social-links">
+                <a href="https://github.com/anku-webdev" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="https://linkedin.com/in/mayank-rawat2308" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="mailto:mayankrawat9966@gmail.com"><i class="fas fa-envelope"></i></a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>
